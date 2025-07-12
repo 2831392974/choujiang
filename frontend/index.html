@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运抽奖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>幸运大转盘</h1>
+        <!-- 转盘区域 -->
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <!-- 奖品区域将通过JS动态生成 -->
+            </div>
+            <div class="pointer"></div>
+            <button id="startBtn" class="start-btn">开始抽奖</button>
+        </div>
+
+        <!-- 抽奖记录区域 -->
+        <div class="history-section">
+            <h2>抽奖记录</h2>
+            <div id="historyList" class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- 结果弹窗 -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>恭喜您获得</h2>
+            <div class="prize-result">
+                <img id="resultImage" src="" alt="奖品图片">
+                <p id="resultName"></p>
+            </div>
+            <button id="confirmBtn">确定</button>
+        </div>
+    </div>
+
+    <!-- 领取奖品弹窗 -->
+    <div id="claimModal" class="modal">
+        <div class="modal-content">
+            <h2>领取奖品</h2>
+            <p>请保存此截图并添加微信客服领取</p>
+            <img src="https://i.postimg.cc/Y0kzN2YB/image.jpg" alt="微信客服二维码" class="wechat-qr">
+            <button class="close-claim-btn">关闭</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

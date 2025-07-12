@@ -1,0 +1,98 @@
+.* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+
+body { background-color: #f5f5f5; color: #333; }
+
+/* 登录页面样式 */
+.login-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e0f2f1; }
+
+.login-container { background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+
+.login-container h1 { text-align: center; margin-bottom: 1.5rem; color: #26a69a; }
+
+.form-group { margin-bottom: 1rem; }
+
+.form-group label { display: block; margin-bottom: 0.5rem; color: #546e7a; }
+
+.form-group input { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+
+.login-btn { width: 100%; padding: 0.8rem; background-color: #26a69a; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s; margin-top: 1rem; }
+
+.login-btn:hover { background-color: #00897b; }
+
+.error-message { color: #e53935; text-align: center; margin-top: 1rem; display: none; }
+
+/* 管理页面样式 */
+.admin-page { min-height: 100vh; }
+
+header { background-color: #00695c; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+
+.logout-btn { background-color: #e53935; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+
+.admin-container { display: flex; }
+
+.sidebar { width: 220px; background-color: #263238; color: white; min-height: calc(100vh - 64px); padding-top: 1rem; }
+
+.sidebar ul { list-style: none; }
+
+.sidebar a { color: #b0bec5; text-decoration: none; padding: 0.8rem 1.5rem; display: block; transition: all 0.3s; }
+
+.sidebar a.active, .sidebar a:hover { background-color: #37474f; color: white; }
+
+.content { flex: 1; padding: 2rem; overflow-y: auto; min-height: calc(100vh - 64px); }
+
+.content-section { display: none; }
+
+.content-section.active { display: block; }
+
+h2 { margin-bottom: 1.5rem; color: #37474f; }
+
+/* 奖品管理样式 */
+.prize-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+
+.prize-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+
+.prize-card:hover { transform: translateY(-5px); }
+
+.prize-image { height: 180px; background-size: cover; background-position: center; }
+
+.prize-info { padding: 1rem; }
+
+.prize-info h3 { margin-bottom: 0.5rem; color: #263238; }
+
+.prize-probability { color: #546e7a; font-size: 0.9rem; margin-bottom: 1rem; }
+
+.prize-actions { display: flex; justify-content: space-between; }
+
+.edit-btn, .delete-btn { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem; }
+
+.edit-btn { background-color: #2196f3; color: white; }
+
+.delete-btn { background-color: #f44336; color: white; }
+
+/* 地图容器样式 */
+.map-container { height: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* 表格样式 */
+.data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+.data-table th, .data-table td { padding: 0.8rem 1rem; text-align: left; }
+
+.data-table th { background-color: #00695c; color: white; }
+
+.data-table tr:nth-child(even) { background-color: #f5f5f5; }
+
+/* 弹窗样式 */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; }
+
+.modal-content { background: white; padding: 2rem; border-radius: 8px; width: 100%; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+
+.close-btn { float: right; font-size: 1.5rem; cursor: pointer; color: #546e7a; }
+
+.modal-content h2 { margin-bottom: 1.5rem; color: #263238; }
+
+.save-btn { background-color: #26a69a; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; margin-top: 1rem; }
+
+.save-btn:hover { background-color: #00897b; }
+
+/* 响应式设计 */
+@media (max-width: 768px) { .admin-container { flex-direction: column; } .sidebar { width: 100%; min-height: auto; } .sidebar ul { display: flex; overflow-x: auto; } .content { padding: 1rem; } .prize-list { grid-template-columns: 1fr; } }

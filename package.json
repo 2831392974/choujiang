@@ -1,0 +1,18 @@
+{
+  "name": "lottery-system",
+  "version": "1.0.0",
+  "description": "抽奖网站系统，包含前端抽奖页面和后台管理系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "axios": "^1.6.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "vercel": "^32.4.1"
+  }
+}

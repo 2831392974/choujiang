@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖系统管理后台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <!-- 登录界面 -->
+    <div id="loginPage" class="login-page">
+        <div class="login-container">
+            <h1>管理后台登录</h1>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="输入密码">
+            </div>
+            <button id="loginBtn" class="login-btn">登录</button>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- 管理界面 -->
+    <div id="adminPage" class="admin-page" style="display: none;">
+        <header>
+            <h1>抽奖系统管理后台</h1>
+            <button id="logoutBtn" class="logout-btn">退出登录</button>
+        </header>
+
+        <div class="admin-container">
+            <!-- 左侧导航 -->
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#prizeManagement" class="nav-link active">奖品管理</a></li>
+                    <li><a href="#visitorMap" class="nav-link">访问者地图</a></li>
+                    <li><a href="#accessLogs" class="nav-link">访问日志</a></li>
+                    <li><a href="#lotteryRecords" class="nav-link">抽奖记录</a></li>
+                </ul>
+            </nav>
+
+            <!-- 右侧内容区 -->
+            <main class="content">
+                <!-- 奖品管理 -->
+                <section id="prizeManagement" class="content-section active">
+                    <h2>奖品管理</h2>
+                    <div class="prize-list" id="prizeList">
+                        <!-- 奖品列表将通过JS动态生成 -->
+                    </div>
+                </section>
+
+                <!-- 访问者地图 -->
+                <section id="visitorMap" class="content-section">
+                    <h2>访问者地图</h2>
+                    <div id="map" class="map-container"></div>
+                </section>
+
+                <!-- 访问日志 -->
+                <section id="accessLogs" class="content-section">
+                    <h2>访问日志</h2>
+                    <div class="log-table-container">
+                        <table id="accessLogTable" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>类型</th>
+                                    <th>IP地址</th>
+                                    <th>位置</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 日志内容将通过JS动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 抽奖记录 -->
+                <section id="lotteryRecords" class="content-section">
+                    <h2>抽奖记录</h2>
+                    <div class="record-table-container">
+                        <table id="lotteryRecordTable" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>奖品</th>
+                                    <th>IP地址</th>
+                                    <th>位置</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 记录内容将通过JS动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- 奖品编辑弹窗 -->
+    <div id="prizeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">编辑奖品</h2>
+            <form id="prizeForm">
+                <input type="hidden" id="prizeId">
+                <div class="form-group">
+                    <label for="prizeName">奖品名称</label>
+                    <input type="text" id="prizeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="prizeImage">奖品图片URL</label>
+                    <input type="text" id="prizeImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="prizeProbability">中奖概率 (%)</label>
+                    <input type="number" id="prizeProbability" min="1" max="100" required>
+                </div>
+                <button type="submit" class="save-btn">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

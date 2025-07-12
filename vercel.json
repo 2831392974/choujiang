@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "admin/**/*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.js"
+    },
+    {
+      "src": "/admin(.*)",
+      "dest": "/admin/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/index.html"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "https://zgbvcuyquvfljthljvdb.supabase.co",
+    "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnYnZjdXlxdXZmbGp0aGxqdmRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMDMyMTIsImV4cCI6MjA2Nzg3OTIxMn0.S_ZTY4Zc23yCPPMIQG2_l3Jcsk5nvPquZlzw-JlS0oY",
+    "AMAP_API_KEY": "a782496f31fd0c379b1c941387e96f07"
+  }
+}
